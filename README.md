@@ -43,7 +43,7 @@ main.ts // 使用核心函数 NestFactory 创建 Nest 应用程序实例的应�
 ```
 
 ## main.ts
-<font style="color:rgb(64, 64, 64);background-color:rgb(253, 253, 253);">要创建 Nest 应用程序实例，我们使用核心 </font>`<font style="color:rgb(40, 118, 210);">NestFactory</font>`<font style="color:rgb(64, 64, 64);background-color:rgb(253, 253, 253);"> 类。</font>`<font style="color:rgb(40, 118, 210);">NestFactory</font>`<font style="color:rgb(64, 64, 64);background-color:rgb(253, 253, 253);"> 公开了一些允许创建应用程序实例的静态方法。</font>`<font style="color:rgb(40, 118, 210);">create（）</font>`<font style="color:rgb(64, 64, 64);background-color:rgb(253, 253, 253);"> 方法返回一个应用程序对象，该对象满足 </font>`<font style="color:rgb(40, 118, 210);">INestApplication</font>`<font style="color:rgb(64, 64, 64);background-color:rgb(253, 253, 253);"> 接口。此对象提供了一组方法，这些方法将在接下来的章节中介绍。在上面 </font>`<font style="color:rgb(40, 118, 210);">main.ts</font>`<font style="color:rgb(64, 64, 64);background-color:rgb(253, 253, 253);"> 示例中，我们只需启动 HTTP 侦听器，即可让应用程序等待入站 HTTP 请求</font>
+要创建 Nest 应用程序实例，我们使用核心 **NestFactory** 类。**NestFactory** 公开了一些允许创建应用程序实例的静态方法。create（） 方法返回一个应用程序对象，该对象满足 **INestApplication** 接口。此对象提供了一组方法，这些方法将在接下来的章节中介绍。在上面 main.ts 示例中，我们只需启动 HTTP 侦听器，即可让应用程序等待入站 HTTP 请求
 
 ```typescript
 import { NestFactory } from '@nestjs/core';
