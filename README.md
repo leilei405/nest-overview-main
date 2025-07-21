@@ -1,10 +1,10 @@
-<h2 id="xuLBk"> 基础环境</h2>
-    - [前置环境（Nodejs）](https://www.yuque.com/react-lxgph/gvf5oy/gaenz1u1xoe1e0g0?singleDoc#%20《Npm镜像管理与设置》)
-    - [Nest 官方文档](https://docs.nestjs.com/)       **<font style="color:#DF2A3F;">Chrome 插件进行翻译无障碍阅读</font>**
+## 基础环境
+ - [前置环境（Nodejs）](https://www.yuque.com/react-lxgph/gvf5oy/gaenz1u1xoe1e0g0?singleDoc#%20《Npm镜像管理与设置》)
+- [Nest 官方文档](https://docs.nestjs.com/)       **<font style="color:#DF2A3F;">Chrome 插件进行翻译无障碍阅读</font>**
 
 ![](https://cdn.nlark.com/yuque/0/2025/png/23174374/1753003227326-cd803881-502b-49f5-9439-b9018463f4d8.png)  
 
-<h2 id="o47iW">项目创建</h2>
+## 项目创建
 ```javascript
 // 全局安装 cli
 npm i -g @nestjs/cli
@@ -13,7 +13,7 @@ npm i -g @nestjs/cli
 nest new project-name
 ```
 
-<h2 id="bF0gz">目录结构介绍</h2>
+## 目录结构介绍
 ```javascript
 ├── dist // 打包资源目录
 ├── node_modules  // 依赖
@@ -42,11 +42,10 @@ app.service.ts // 具有单一方法的基本服务
 main.ts // 使用核心函数 NestFactory 创建 Nest 应用程序实例的应用程序的入口文件
 ```
 
-<h2 id="mQO0L">main.ts</h2>
+## main.ts
 <font style="color:rgb(64, 64, 64);background-color:rgb(253, 253, 253);">要创建 Nest 应用程序实例，我们使用核心 </font>`<font style="color:rgb(40, 118, 210);">NestFactory</font>`<font style="color:rgb(64, 64, 64);background-color:rgb(253, 253, 253);"> 类。</font>`<font style="color:rgb(40, 118, 210);">NestFactory</font>`<font style="color:rgb(64, 64, 64);background-color:rgb(253, 253, 253);"> 公开了一些允许创建应用程序实例的静态方法。</font>`<font style="color:rgb(40, 118, 210);">create（）</font>`<font style="color:rgb(64, 64, 64);background-color:rgb(253, 253, 253);"> 方法返回一个应用程序对象，该对象满足 </font>`<font style="color:rgb(40, 118, 210);">INestApplication</font>`<font style="color:rgb(64, 64, 64);background-color:rgb(253, 253, 253);"> 接口。此对象提供了一组方法，这些方法将在接下来的章节中介绍。在上面 </font>`<font style="color:rgb(40, 118, 210);">main.ts</font>`<font style="color:rgb(64, 64, 64);background-color:rgb(253, 253, 253);"> 示例中，我们只需启动 HTTP 侦听器，即可让应用程序等待入站 HTTP 请求</font>
 
 ```typescript
-
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
@@ -58,7 +57,7 @@ async function bootstrap() {
 bootstrap();
 ```
 
-<h2 id="rFen1">tsconfig.json</h2>
+## tsconfig.json
 ```json
 {
   "compilerOptions": {
@@ -119,7 +118,7 @@ bootstrap();
 
 
 
-<h2 id="Nji2s">常用命令</h2>
+## 常用命令
 ```bash
 # 生成 module
 nest generate module user
@@ -135,10 +134,9 @@ nest generate service user
 nest generate resource user
 ```
 
-<h2 id="y2mBv">Nest 控制器</h2>
-<h3 id="fcxmJ">@Request()</h3>
-+ 请求参数
-
+## Nest 控制器
+### @Request()
+- 请求参数
 ```javascript
 import { Controller, Get, Request, Query } from '@nestjs/common';
 import { AppService } from './app.service';
@@ -160,11 +158,11 @@ export class AppController {
 }
 ```
 
-<h3 id="Zzu8i">@Response()</h3>
-+ 响应参数
+### @Response()
+- 响应参数
 
-<h3 id="dGCrS">@Query()</h3>
-+ `**Get**` 请求直接获取参数
+### @Query()
+- `**Get**` 请求直接获取参数
 
 ```javascript
 import { Controller, Get, Query } from '@nestjs/common';
@@ -186,8 +184,8 @@ export class AppController {
 }
 ```
 
-<h3 id="mHrfB">@Body()</h3>
-+ `**Post**` 请求直接获取参数
+### @Body()
+- `**Post**` 请求直接获取参数
 
 ```javascript
 import { Controller, Post, Body } from '@nestjs/common';
@@ -211,8 +209,8 @@ export class AppController {
 
 ```
 
-<h3 id="HkJks">@Param()</h3>
-+ 动态路由获取参数
+### @Param()
+- 动态路由获取参数
 
 ```javascript
 import { Body, Controller, Get, Post, Request, Param } from '@nestjs/common';
@@ -238,8 +236,8 @@ export class AppController {
 }
 ```
 
-<h3 id="DbTap">@Headers()</h3>
-+ 获取 `**header**` 信息
+### @Headers()
+- 获取 `**header**` 信息
 
 ```javascript
 import { Controller, Get, Param, Headers } from '@nestjs/common';
@@ -264,8 +262,8 @@ export class AppController {
 
 ```
 
-<h3 id="us3qT">@HttpCode()</h3>
-+ 控制器返回的状态码
+### @HttpCode()
+- 控制器返回的状态码
 
 ```javascript
 import {
@@ -298,6 +296,6 @@ export class AppController {
 
 ```
 
-<h3 id="DNQNO">@Next()</h3>
-+ 继续处理下一个`**中间件**`或`**路由**`
+### @Next()
+- 继续处理下一个`**中间件**`或`**路由**`
 
