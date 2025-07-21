@@ -162,7 +162,7 @@ export class AppController {
 - 响应参数
 
 ### @Query()
-- `**Get**` 请求直接获取参数
+- **Get** 请求直接获取参数
 
 ```javascript
 import { Controller, Get, Query } from '@nestjs/common';
@@ -185,7 +185,7 @@ export class AppController {
 ```
 
 ### @Body()
-- `**Post**` 请求直接获取参数
+- **Post** 请求直接获取参数
 
 ```javascript
 import { Controller, Post, Body } from '@nestjs/common';
@@ -237,7 +237,7 @@ export class AppController {
 ```
 
 ### @Headers()
-- 获取 `**header**` 信息
+- 获取 **header** 信息
 
 ```javascript
 import { Controller, Get, Param, Headers } from '@nestjs/common';
@@ -297,5 +297,5 @@ export class AppController {
 ```
 
 ### @Next()
-- 继续处理下一个`**中间件**`或`**路由**`
+- 继续处理下一个 **中间件** 或 **路由**
 
