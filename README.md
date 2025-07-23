@@ -17,7 +17,7 @@ nest new project-name
 ```javascript
 ├── dist // 打包资源目录
 ├── node_modules  // 依赖
-├── package.json  // 依赖版本及启动构建命令文件
+├── package.json  // 依赖版本及启动构建命令文件 
 ├── pnpm-lock.yaml  // 依赖锁定 让其他开发者能够顺利运行
 ├── README.md // 介绍
 ├── src // 源码文件
