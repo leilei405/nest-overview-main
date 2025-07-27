@@ -6,16 +6,12 @@ import {
   Patch,
   Param,
   Delete,
-  Version,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
-@Controller({
-  path: 'user',
-  version: '1',
-})
+@Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
@@ -25,7 +21,6 @@ export class UserController {
   }
 
   @Get()
-  @Version('1')
   findAll() {
     return this.userService.findAll();
   }
