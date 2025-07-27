@@ -25,7 +25,7 @@ export class UserController {
   }
 
   @Get()
-  @Version('2')
+  @Version('1')
   findAll() {
     return this.userService.findAll();
   }
