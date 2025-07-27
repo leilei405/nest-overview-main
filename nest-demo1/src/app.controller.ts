@@ -7,19 +7,23 @@ import {
   Param,
   Headers,
   HttpCode,
+  Inject,
 } from '@nestjs/common';
 import { AppService } from './app.service';
+import { UserService } from './user/user.service';
 
 @Controller('app')
 export class AppController {
   constructor(private readonly appService: AppService) {}
+  @Inject(UserService)
+  private readonly userService: UserService;
 
   @Get()
   getHello(@Request() request) {
     console.log(request.query, '==query==');
     return {
       code: 0,
-      msg: 'success',
+      msg: this.userService.findAll(),
       data: {
         name: 'hello nest',
       },
