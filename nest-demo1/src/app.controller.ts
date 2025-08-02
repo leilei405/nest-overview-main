@@ -20,7 +20,7 @@ export class AppController {
 
   @Get()
   getHello(@Request() request) {
-    console.log(request.query, '==query==');
+    console.log(request.query, '==query1==');
     return {
       code: 0,
       msg: this.userService.findAll(),
