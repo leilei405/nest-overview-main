@@ -6,14 +6,21 @@ import {
   Patch,
   Param,
   Delete,
+  Inject,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { CourseService } from '../course/course.service';
 
 @Controller('user')
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(
+    private readonly userService: UserService,
+    private readonly courseService: CourseService,
+    @Inject('GLOBAL_COURSE_SERVICE')
+    private readonly globalCourseService: { globalUrl: string },
+  ) {}
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
@@ -22,7 +29,7 @@ export class UserController {
 
   @Get()
   findAll() {
-    return this.userService.findAll();
+    return this.globalCourseService.globalUrl;
   }
 
   @Get(':id')
