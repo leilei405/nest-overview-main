@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { VersioningType } from '@nestjs/common';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
+import { ResponseIntercept } from './common/responseIntercept';
 // import { Request, Response, NextFunction } from 'express';
 
 // const passPath = ['/api/user'];
@@ -29,6 +30,8 @@ async function bootstrap() {
   // app.use(middlewareAll);
   /** 跨域 - 允许所有来源 */
   app.enableCors();
+  /** 响应拦截 */
+  app.useGlobalInterceptors(new ResponseIntercept());
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
