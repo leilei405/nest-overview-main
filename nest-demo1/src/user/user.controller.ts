@@ -29,7 +29,7 @@ export class UserController {
 
   @Get()
   findAll() {
-    return this.globalCourseService.globalUrl;
+    return this.userService.findAll();
   }
 
   @Get(':id')
