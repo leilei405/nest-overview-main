@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { UserService } from './user/user.service';
 import { CourseModule } from './course/course.module';
+import { UploadModule } from './upload/upload.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { CourseModule } from './course/course.module';
     CourseModule.forRoot({
       globalUrl: '动态参数传入',
     }),
+    UploadModule,
   ],
   controllers: [AppController],
   providers: [AppService, UserService],
