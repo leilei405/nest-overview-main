@@ -4,6 +4,7 @@ import { VersioningType } from '@nestjs/common';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
 import { ResponseIntercept } from './common/responseIntercept';
+import { AbnormalFilter } from './common/abnormalFilter';
 // import { Request, Response, NextFunction } from 'express';
 
 // const passPath = ['/api/user'];
@@ -32,6 +33,8 @@ async function bootstrap() {
   app.enableCors();
   /** 响应拦截 */
   app.useGlobalInterceptors(new ResponseIntercept());
+  /** 异常处理 */
+  app.useGlobalFilters(new AbnormalFilter());
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
