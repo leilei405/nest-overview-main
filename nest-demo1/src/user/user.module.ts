@@ -1,18 +1,22 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { UserService } from './user.service';
 import { UserController } from './user.controller';
 import { CourseModule } from 'src/course/course.module';
-import TestMiddleware from 'middleware/test';
 
 @Module({
   controllers: [UserController],
   providers: [UserService],
   imports: [CourseModule],
 })
-export class UserModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
-    // consumer.apply(TestMiddleware).forRoutes('user/find');
-    // .forRoutes({ path: 'user', method: RequestMethod.GET });
-    consumer.apply(TestMiddleware).forRoutes(UserController);
-  }
-}
+export class UserModule {}
+
+// // 自定义依赖注入中间件
+// import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+// import TestMiddleware from 'middleware/test';
+// export class UserModule implements NestModule {
+//   configure(consumer: MiddlewareConsumer) {
+//     // consumer.apply(TestMiddleware).forRoutes('user/find');
+//     // .forRoutes({ path: 'user', method: RequestMethod.GET });
+//     consumer.apply(TestMiddleware).forRoutes(UserController);
+//   }
+// }
