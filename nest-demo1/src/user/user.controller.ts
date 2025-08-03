@@ -27,7 +27,7 @@ export class UserController {
     return this.userService.create(createUserDto);
   }
 
-  @Get()
+  @Get('find')
   findAll() {
     return this.globalCourseService.globalUrl;
   }
