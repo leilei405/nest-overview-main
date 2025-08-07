@@ -10,7 +10,7 @@ import { CourseModule } from 'src/course/course.module';
 })
 export class UserModule {}
 
-// // 自定义依赖注入中间件
+// // 自定义依赖注入中间件 test
 // import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 // import TestMiddleware from 'middleware/test';
 // export class UserModule implements NestModule {
