@@ -1,0 +1,28 @@
+{
+    "tokenSecret": "lucky_token_secret",
+    "userName": "admin",
+    "userPassword": "lucky_password_123",
+    "port": 3000,
+    "db": {
+        "host": "localhost",
+        "port": 3306,
+        "user": "root",
+        "password": "123456",
+        "database": "test"
+    },
+    "redis": {
+        "host": "localhost",
+        "port": 6379,
+        "password": "123456",
+        "db": 0,
+        "keyPrefix": "lucky:",
+        "tokenKey": "token",
+        "userKey": "user",
+        "tokenKeyPrefix": "token:",
+        "userKeyPrefix": "user:",
+        "tokenKeySuffix": "token",
+        "userKeySuffix": "user",
+        "tokenKeyExpireSuffix": "tokenExpire",
+        "userKeyExpireSuffix": "userExpire"
+    }
+}
