@@ -29,6 +29,8 @@ export class UserController {
   findAll() {
     const port = this.configService.get(ConfigEnum.PORT);
     const url = this.configService.get(ConfigEnum.URL);
+    const dbPort = this.configService.get(ConfigEnum.DB_PORT);
+    console.log(dbPort, '=dbPort');
     return this.userService.findAll();
   }
 
