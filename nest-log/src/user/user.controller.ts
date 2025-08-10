@@ -6,17 +6,21 @@ import {
   Patch,
   Param,
   Delete,
-  Logger,
+  // Logger,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { Logger } from 'nestjs-pino';
 
 @Controller('user')
 export class UserController {
-  private logger = new Logger(UserController.name);
-  constructor(private readonly userService: UserService) {
-    this.logger.log('UserController constructor 初始化');
+  // private logger = new Logger(UserController.name);
+  constructor(
+    private readonly logger: Logger,
+    private readonly userService: UserService,
+  ) {
+    // this.logger.log('UserController constructor 初始化');
   }
 
   @Post()
@@ -26,7 +30,7 @@ export class UserController {
 
   @Get()
   findAll() {
-    this.logger.log('UserController findAll 方法调用成功');
+    // this.logger.log('UserController findAll 方法调用成功');
     return this.userService.findAll();
   }
 
